@@ -4,6 +4,8 @@ const express = require("express");
 
 const blogRoutes = require("./routes/blog");
 
+const db = require("./data/database");
+
 const app = express();
 app.use(express.json());
 
@@ -21,4 +23,6 @@ app.use(function (error, req, res, next) {
   res.status(500).render("500");
 });
 
-app.listen(3000);
+db.connectToDatabase().then(function () {
+  app.listen(3000);
+});
