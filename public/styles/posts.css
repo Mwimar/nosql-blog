@@ -33,6 +33,7 @@
 }
 
 #posts-meta {
+    display:block;
     font-style: italic;
     color:grey;
 
