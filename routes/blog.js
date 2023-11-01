@@ -71,6 +71,19 @@ router.get("/posts/:id", async function (req, res) {
   res.render("post-detail", { post: post });
 });
 
+router.get("/posts/:id/edit", async function (req, res) {
+  const postId = req.params.id;
+  const post = await db
+    .getDb()
+    .collection("posts")
+    .findOne({ _id: new ObjectId(postId) }, { title: 1, summary: 1, body: 1 });
+
+  if (!post) {
+    return res.status(404).render("404");
+  }
+  res.render("update-post", { post: post });
+});
+
 // router.get("/posts/:id", function (req, res) {
 //   res.render("post-detail");
 // });
