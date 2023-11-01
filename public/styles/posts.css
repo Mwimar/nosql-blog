@@ -41,3 +41,4 @@
 #body {
     white-space: pre-wrap;
 }
+ /* pre-wrap ensures whitespaces and linebreaks entered in user input are maintained */

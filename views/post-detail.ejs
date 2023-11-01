@@ -10,13 +10,15 @@
       <h1><%= post.title %></h1>
       <section id="post-meta">
         <address>
-          <a href="mailto:<%= post.author_email %>"><%= post.author_name %></a>
+          <a href="mailto:<%= post.author.email %>"> <% post.author.name %></a>
         </address>
-        <time datetime="<%= post.time %>"> <%= post.humanReadableDate %></time>
+        |
+
+        <time datetime="<%= post.date %>"><%= post.date %></time>
       </section>
       <hr />
       <section>
-        <p id="body"><%= post.body %></p>
+        <p id="body"></p>
       </section>
     </main>
   </body>
